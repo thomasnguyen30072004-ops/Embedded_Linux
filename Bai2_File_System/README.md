@@ -17,31 +17,31 @@ Chương trình `filestat` phải:
 - Các macro kiểm tra loại tệp:  S_ISREG(mode), S_ISDIR(mode), S_ISLNK(mode)
   
 **Hàm thời gian:**
-localtime(), strftime(), ctime()
-Quyền truy cập tệp, UID/GID, symbolic link (hàm readlink()).
+- localtime(), strftime(), ctime()
+- Quyền truy cập tệp, UID/GID, symbolic link (hàm readlink()).
 
 **🧰 Cấu trúc thư mục**
-02_Linux_File_System/
-├── filestat.c
-└── README.md
+- 02_Linux_File_System/
+ + filestat.c
+ + README.md
 
 **⚙️ Cách biên dịch**
 gcc -Wall -Wextra -o filestat filestat.c
 
 **▶️ Cách chạy thử**
-./filestat /etc/passwd
-./filestat /home
-./filestat mylink
+- ./filestat /etc/passwd
+- ./filestat /home
+- ./filestat mylink
 
 **Ví dụ kết quả:**
-File Path: /etc/passwd
-File Type: Regular File
-Size: 2471 bytes
-Last Modified: 2025-10-20 09:13:45
-Hard Link Count: 1
-Owner: root (uid=0)
-Group: root (gid=0)
-Permissions: -rw-r--r--
+- File Path: /etc/passwd
+- File Type: Regular File
+- Size: 2471 bytes
+- Last Modified: 2025-10-20 09:13:45
+- Hard Link Count: 1
+- Owner: root (uid=0)
+- Group: root (gid=0)
+- Permissions: -rw-r--r--
 
 
 👨‍💻 Người thực hiện: Nguyễn Vũ Nhật Thành
