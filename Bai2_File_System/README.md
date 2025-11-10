@@ -8,16 +8,13 @@ Chương trình `filestat` phải:
 1. Nhận đường dẫn tệp qua dòng lệnh (`argv[1]`).
 2. Sử dụng `lstat()` để lấy thông tin tệp.
 3. In ra ít nhất các thông tin sau:
-   - Đường dẫn tệp.
-   - Loại tệp (Regular file, Directory, Symbolic link, ...).
+   - Đường dẫn tệp.- Loại tệp (Regular file, Directory, Symbolic link, ...).
    - Kích thước (bytes).
    - Thời gian chỉnh sửa cuối cùng (Last modified time).
 
 ## 🧠 Kiến thức áp dụng
 - Cấu trúc dữ liệu **`struct stat`** trong thư viện `<sys/stat.h>`.
-- Các macro kiểm tra loại tệp:
-  ```c
-  S_ISREG(mode), S_ISDIR(mode), S_ISLNK(mode)
+- Các macro kiểm tra loại tệp:  S_ISREG(mode), S_ISDIR(mode), S_ISLNK(mode)
   
 **Hàm thời gian:**
 localtime(), strftime(), ctime()
