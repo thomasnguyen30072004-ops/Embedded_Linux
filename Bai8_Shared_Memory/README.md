@@ -1,6 +1,6 @@
 ########################## SHARED MEMORY ################################
 
-#Mục tiêu:
+# Mục tiêu:
 
 - Tạo vùng nhớ chia sẻ giữa 2 tiến trình
 - Producer ghi dữ liệu (struct product_t)
