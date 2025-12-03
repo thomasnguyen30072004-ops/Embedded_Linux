@@ -1,6 +1,5 @@
-
-======================== SHARED MEMORY ========================
-Mục tiêu:
+########################## SHARED MEMORY ################################
+#Mục tiêu:
 - Tạo vùng nhớ chia sẻ giữa 2 tiến trình
 - Producer ghi dữ liệu (struct product_t)
 - Consumer đợi tín hiệu semaphore rồi đọc dữ liệu
