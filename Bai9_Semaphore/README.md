@@ -1,6 +1,7 @@
 #IPC Semaphore: Multi-Producer Multi-Consumer Restaurant Simulation
+
 #🧩 1. Giới thiệu
-Bài tập mô phỏng hệ thống “Nhà hàng” sử dụng POSIX Shared Memory (shm_open + mmap) và POSIX Named Semaphores (sem_open) để đồng bộ hóa nhiều tiến trình trong mô hình:
+-> Bài tập mô phỏng hệ thống “Nhà hàng” sử dụng POSIX Shared Memory (shm_open + mmap) và POSIX Named Semaphores (sem_open) để đồng bộ hóa nhiều tiến trình trong mô hình:
 - 2 Producer (Đầu bếp)
 - 3 Consumer (Khách hàng)
 - Launcher: tiến trình cha chịu trách nhiệm tạo shared memory, semaphore và exec các process con.
