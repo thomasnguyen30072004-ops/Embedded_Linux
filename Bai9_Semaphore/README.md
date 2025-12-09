@@ -1,6 +1,6 @@
-#IPC Semaphore: Multi-Producer Multi-Consumer Restaurant Simulation
+# IPC Semaphore: Multi-Producer Multi-Consumer Restaurant Simulation
 
-#🧩 1. Giới thiệu
+# 🧩 1. Giới thiệu
 -> Bài tập mô phỏng hệ thống “Nhà hàng” sử dụng POSIX Shared Memory (shm_open + mmap) và POSIX Named Semaphores (sem_open) để đồng bộ hóa nhiều tiến trình trong mô hình:
 - 2 Producer (Đầu bếp)
 - 3 Consumer (Khách hàng)
@@ -8,7 +8,7 @@
 -> Bài toán dựa trên mô hình kinh điển: Multiple Producer – Multiple Consumer Bounded Buffer
 Trong bài này, mỗi loại mâm (Tray Vegan / Tray Non-Vegan) là một bounded buffer size 10.
 
-#🧱 2. Kiến trúc chương trình
+# 🧱 2. Kiến trúc chương trình
 - Chương trình được chia thành 5 file thực thi độc lập:
 -> launcher: Tạo shared memory, semaphore, và chạy các tiến trình khác
 -> producer: Tiến trình đầu bếp (vegan hoặc nonvegan tùy argv)
@@ -16,7 +16,7 @@ Trong bài này, mỗi loại mâm (Tray Vegan / Tray Non-Vegan) là một bound
 -> shared.h: Khai báo struct shared memory, constants, semaphore names
 -> Makefile: Tự động build toàn bộ chương trình
 
-#📦 Shared Memory chứa:
+# 📦 Shared Memory chứa:
 - tray_vegan[10]
 - tray_nonvegan[10]
 -> Mỗi ô có giá trị:
@@ -24,7 +24,7 @@ Trong bài này, mỗi loại mâm (Tray Vegan / Tray Non-Vegan) là một bound
 - 1 = món chay
 - 2 = món không chay
 
-#🔐 3. Semaphore sử dụng
+# 🔐 3. Semaphore sử dụng
 Mỗi mâm có 3 semaphore:
 - mutex_*: Binary semaphore bảo vệ truy cập critical section
 - empty_*: Counting semaphore, số ô trống
@@ -38,7 +38,7 @@ Mỗi mâm có 3 semaphore:
 - /devlinux_empty_nonveg
 - /devlinux_full_nonveg
 
-#4. Hành vi của các tiến trình
+# 4. Hành vi của các tiến trình
 4.1 Producer – Đầu bếp
 -> Mỗi đầu bếp chỉ nấu 2 món đặc trưng.
 
@@ -71,10 +71,10 @@ Mỗi mâm có 3 semaphore:
 4. Trả mutex + tăng empty.
 5. Nghỉ 10–15 giây.
 
-#🚀 5. Cách build chương trình
+# 🚀 5. Cách build chương trình
 - make
 
-#▶️ 6. Cách chạy chương trình
+# ▶️ 6. Cách chạy chương trình
 - Chỉ cần chạy tiến trình cha: ./launcher
 -> Launcher sẽ tự động:
 1. Tạo shared memory
@@ -86,9 +86,9 @@ Mỗi mâm có 3 semaphore:
 ./consumer nonvegan
 ./consumer hybrid
 
-#💡7. Ghi chú quan trọng
+# 💡7. Ghi chú quan trọng
 - Nếu chạy launcher nhiều lần → cần cleanup semaphore (vì POSIX named sem không tự hủy).
 - Đây là mô hình thật trong Linux — áp dụng cho Embedded Systems / OS / Process Synchronization.
 - Code đã comment chi tiết line-by-line theo đúng yêu cầu bài lab.
 
-#Author: Nguyen Vu Nhat Thanh
+# Author: Nguyen Vu Nhat Thanh
